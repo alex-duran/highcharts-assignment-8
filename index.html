@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Violent Crime and Florida Schools </title>
+
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/secondchartstyle.css">
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/themes/avocado.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+
+</head>
+<body>
+
+<h1>Violent Crime and Florida Schools</h1>
+<p> By Alex Durán </p>
+<p>Violent crime is an issue covered frequently on the news. Yet most Americans are unaware that violent crime has been on the decline for a while now. Interestingly, for four major public Florida universities, violent crime rates have not declined steadily, as shown in the chart below. It is also worth noting that for the University of Florida, violent crimes have decresed slightly, yet 10 still occured in 2016. Over the last 7 years, the University of Central Florida usually had the most violent crimes, yet Florida State University had the most violent crimes in 2016. </p>
+
+<div id="firstchart" style="width:100%; height:400px;"></div>
+
+
+<script>
+
+
+
+Highcharts.chart('firstchart', {
+
+    title: {
+        text: 'Violent Crime at Florida Schools'
+    },
+
+    subtitle: {
+        text: 'Source: FBI'
+    },
+
+    yAxis: {
+        title: {
+            text: 'Number of Crimes'
+        }
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+    plotOptions: {
+        series: {
+            label: {
+                connectorAllowed: false
+            },
+            pointStart: 2010
+        }
+    },
+
+    series: [{
+        name: 'University of Florida',
+        data: [16, 10, 18, 10, 15, 15, 10,]
+    }, {
+        name: 'Florida State University',
+        data: [14, 31, 31, 22, 15, 22, 20,]
+    }, {
+        name: 'University of Central Florida',
+        data: [16, 23, 26, 30, 29, 20, 14,]
+    }, {
+        name: 'Florida International University',
+        data: [13, 16, 9, 4, 9, 16, 15,]
+    }],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
+    }
+
+});
+
+</script>
+
+<p> <a href="https://ucr.fbi.gov/crime-in-the-u.s/2015/crime-in-the-u.s.-2015/tables/table-9/table-9-state-pieces/table_9_offenses_known_to_law_enforcement_florida_by_university_and_college_2015.xls" target="_blank">Source: Federal Bureau of Investigation</a>. </p>
+
+<div id="secondchart" style="width:100%; height:400px;"></div>
+
+<script>
+
+Highcharts.chart('secondchart', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Violent Crime by Type at Florida Schools in 2016'
+    },
+    xAxis: {
+        categories: ['University of Florida', 'Florida State University', 'University of Central Florida', 'Florida International University',]
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Number of occurences'
+        },
+        stackLabels: {
+            enabled: true,
+            style: {
+                fontWeight: 'bold',
+                color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+            }
+        }
+    },
+    legend: {
+        align: 'right',
+        x: -30,
+        verticalAlign: 'top',
+        y: 25,
+        floating: true,
+        backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+        borderColor: '#CCC',
+        borderWidth: 1,
+        shadow: false
+    },
+    tooltip: {
+        headerFormat: '<b>{point.x}</b><br/>',
+        pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
+    },
+    plotOptions: {
+        column: {
+            stacking: 'normal',
+            dataLabels: {
+                enabled: true,
+                color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+            }
+        }
+    },
+    series: [{
+        name: 'Rape',
+        data: [5, 10, 5, 5,]
+    }, {
+        name: 'Robbery',
+        data: [2, 6, 4, 7,]
+    }, {
+        name: 'Aggravated Assault',
+        data: [3, 4, 5, 3,]
+    }]
+});
+
+</script>
+
+<p> <a href="https://ucr.fbi.gov/crime-in-the-u.s/2016/crime-in-the-u.s.-2016/tables/table-7/table-7-state-cuts/florida.xls" target="_blank">Source: Federal Bureau of Investigation</a>. </p>
+
+
+
+
+
+
+
+</body>
+</html>

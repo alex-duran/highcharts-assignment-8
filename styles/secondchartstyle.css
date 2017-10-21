@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #fff;
+  color: #000;
+  font-family: "Verdana", sans-serif;
+  margin: 4em;
+}
+
+
+/*  #container div (below) wraps one chart  */
+
+#container {
+  width: 60%;
+  height: 500px;
+}
+
+p { line-height: 1.5em; }
+
+.subtitle {
+  font-size: 1.7em;
+  font-style: italic;
+}
+
+/* links */
+
+a {
+  color: #0287b3;
+}
+
+a:hover {
+  color: #3ecbfa;
+}
+
+@media (max-width: 600px) {
+    #container { margin: 0; }
+    article { width: 100%; }
+    aside { margin: 0; width: 100%; }
+    #top-image-container {display: none; }
+    #sidebar2 { margin: 0; }
